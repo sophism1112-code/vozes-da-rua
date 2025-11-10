@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vozes da Rua</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Estilo Geral ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f0e6;
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      margin: 0;
+      color: #111;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+      border-bottom: 2px solid #000;
+      text-align: center;
+      padding: 25px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeInDown 1s ease;
+    }
+
+    .logo {
+      width: 160px;
+      transition: transform 0.4s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #555;
+    }
+
+    /* ===== Sessões ===== */
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px 25px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.6s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1, h2 {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.8em;
+      color: #333;
+      font-weight: 400;
+    }
+
+    /* ===== Botões ===== */
+    button {
+      background: linear-gradient(45deg, #000, #333);
+      color: #fff;
+      border: none;
+      padding: 14px 35px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      font-size: 1em;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #222, #000);
+    }
+
+    /* ===== Formulário ===== */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      outline: none;
+      transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #000;
+      box-shadow: 0 0 6px #444;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    /* ===== Rodapé ===== */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-top: 2px solid #000;
+      font-size: 0.95em;
+      animation: fadeInUp 1s ease;
+    }
+
+    .social-links a {
+      color: #000;
+      font-size: 28px;
+      margin: 0 10px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.15);
+      color: #444;
+    }
+
+    /* ===== Animações ===== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      section {
+        margin: 30px 10px;
+        padding: 30px 15px;
+      }
+      input, textarea {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <img src="imagens/logo-vozes.png" alt="Logo Vozes da Rua" class="logo">
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#envio">Envie sua Música</a>
+    </nav>
+  </header>
+
+  <!-- Início -->
+  <section id="inicio" class="visible">
+    <h1>Vozes da Rua</h1>
+    <p>O espaço onde a música independente ganha voz e a rua vira palco.</p>
+    <button onclick="document.getElementById('envio').scrollIntoView({behavior: 'smooth'})">Envie sua música</button>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2>Sobre o Projeto</h2>
+    <p>O <strong>Vozes da Rua</strong> é um projeto criado por estudantes do <strong>EMED Senac Lapa Scipião</strong>, com o objetivo de divulgar e valorizar artistas da cena musical independente e underground. Nossa proposta é abrir espaço para que talentos que ainda não têm visibilidade possam mostrar sua arte ao mundo.</p>
+    <p>Buscamos fortalecer a música como ferramenta de expressão, resistência e identidade, dando voz a quem transforma o cotidiano em som. O projeto reflete a potência das ruas, das periferias e das histórias que merecem ser ouvidas — porque acreditamos que a arte de verdade nasce da vivência.</p>
+    <p>Mais do que um espaço de divulgação, o <strong>Vozes da Rua</strong> é um movimento de conexão, liberdade e criatividade. Aqui, a rua não só tem voz — ela canta alto.</p>
+  </section>
+
+  <!-- Envio -->
+  <section id="envio">
+    <h2>Envie sua Música</h2>
+    <form>
+      <input type="text" placeholder="Nome artístico" required>
+      <input type="text" placeholder="Gênero musical" required>
+      <input type="url" placeholder="Link da faixa (YouTube, Spotify, etc.)" required>
+      <textarea placeholder="Breve descrição do som" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p><em>“Mostra teu som pro mundo — aqui, a rua escuta.”</em></p>
+    <p>Ou envie diretamente pelo e-mail: <a href="mailto:vozesdarua25@gmail.com">vozesdarua25@gmail.com</a></p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>A rua tem voz — e ela canta alto.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/vozesdarua__" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://open.spotify.com/user/31u23zp4gudie54snbrzbpxw4434?si=17588b121a394230" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="mailto:vozesdarua25@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Animações de rolagem suave
+    const sections = document.querySelectorAll('section');
+    const revealSection = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealSection);
+    revealSection();
+  </script>
+</body>
+</html>
